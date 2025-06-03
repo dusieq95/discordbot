@@ -44,55 +44,6 @@
 
 ---
 
-#### 3.3. Update the Bot’s Configuration
-
-1. Go to [Render](https://render.com/)
-
-2. Create Your account
-
-3. Give your workspace a name and select free plan then press create new account
-![Give your workspace name and selecte free plan](https://github.com/user-attachments/assets/8d1cccc2-1895-404d-80ad-9b74fecfc80d)
-
-4. Select the service you want i choose web service(2nd one)
-![image](https://github.com/user-attachments/assets/30fc2400-ced2-4a53-bc8f-20a4be631264)
-
-5. Connect your github account(you can also host your private github repos)
-![image](https://github.com/user-attachments/assets/177f1bfe-280c-418f-9ee8-d46e288fe280)
-
-6.Go to configuration
-![configure](https://github.com/user-attachments/assets/6edf5b52-df19-4a27-a5b2-bc361de1728b)
-
-7.select the repo you wanna use then press save. Now close the window and get back to render
-![image](https://github.com/user-attachments/assets/372d3601-1918-4ee0-9929-d327eafbe0bf)
-
-8. Now you can able to see the repo, by clicking the repo name you will be redirect to deployment configuration do the steps as below.
-     1. name your project
-  
-     2. use this on Build Command
-  
-     ```bash
-     pip install --upgrade pip && pip3 install -r requirements.txt
-     ```
-     
-     3. use this on Start Command(if you by any chance renamed your main.py file to anything else for example something.py then use `python3 something.py`)
-     ```bash
-     python3 main.py 
-     ```
-     
-![image](https://github.com/user-attachments/assets/cba756b0-270c-4437-98a4-f85093e1ea06)
-
-9. Configure your environment variable
-![image](https://github.com/user-attachments/assets/322bd923-735e-4553-9884-4308d07cd7e3)
-
-   **put your actual values**.
-
-   * **SHAPES\_API\_KEY:** Paste the API Key from ShapesInc.
-   * **SHAPES\_APP\_ID:** Paste the App ID from ShapesInc.
-   * **DISCORD\_TOKEN:** You’ll get this in the next section.
-   * **MODEL:** This should match your bot’s “model name” on ShapesInc (e.g. if you named your bot “otahun,” then `MODEL="otahun"`).
-
----
-
 #### 3.4. Create Your Discord Bot & Get Token
 
 1. Go to the [Discord Developer Portal](https://discord.com/developers/applications).
@@ -108,39 +59,72 @@ Note: click these three buttons that are present in the same Bot section
 
 ---
 
-#### 3.5. Install Dependencies
-
-1. Make sure you have **Python 3** installed.
-2. In your terminal, run (inside the cloned folder):
-
-   ```bash
-   pip install --upgrade pip
-   pip3 install -r requirements.txt
-   ```
-
-   This will download all the Python packages the bot needs.
-
-   ![Terminal installing requirements](images/install-reqs.png)
-   *(Insert a screenshot of the terminal running `pip3 install -r requirements.txt`.)*
-
----
-
-#### 3.6. Run Locally (Optional)
+#### 3.5. Run Locally (Optional)
 
 > **Note:** Running on your local computer is fine for testing, but it will stop working if you close your machine or lose internet.
 
-1. In your terminal (still inside the repo folder), run:
+   #### 3.6. Install Dependencies
+   
+   1. Make sure you have **Python 3** installed.
+   2. In your terminal, run (inside the cloned folder):
+   
+      ```bash
+      pip install --upgrade pip
+      pip3 install -r requirements.txt
+      ```
+   
+      This will download all the Python packages the bot needs.
+   
+      if you getting this error:
+      ![error: externally-managed-environment](https://github.com/user-attachments/assets/de7885e9-c287-407a-ad58-7f32b4a0b83f)
+   
+      then use:
+      ```bash
+      python3 -m venv ChatBot_env
+      ```
+   
+      You can name `ChatBot_env` to anything you want
+   
+      then enable your environment by using:
+      
+      ```bash
+      source ChatBot/bin/activate
+      ```
+   
+      ![Installing Dependencies](https://github.com/user-attachments/assets/f866007e-fb7b-49a0-b262-4112373957d5)
+
+1. In your terminal (still inside the repo folder), create a file named .env (if it doesn’t exist).
+   
+   Open .env in a text editor, and paste in:
+
+   ```ini
+   SHAPES_API_KEY="your_shapesinc_api_key_here"
+   SHAPES_APP_ID="your_shapesinc_app_id_here"
+   DISCORD_TOKEN="your_discord_bot_token_here"
+   MODEL="your_shapesinc_model_name_here"
+   ```
+
+   Replace each placeholder in quotes with your actual values.
+   
+    **SHAPES_API_KEY**: Paste the API Key from ShapesInc.
+
+    **SHAPES_APP_ID**: Paste the App ID from ShapesInc.
+
+    **DISCORD_TOKEN**: You’ll get this in the next section.
+
+    **MODEL**: This should match your bot’s “model name” on ShapesInc (e.g. if you named your bot “otahun,” then MODEL="otahun").
+
+2. Save that and run:
 
    ```bash
    python3 main.py
    ```
 
-2. You should see messages like “Bot is starting…” and “Connected to Discord.”
+3. You should see messages like “Bot is starting…” and “Connected to Discord.”
 
-3. Invite your bot to a Discord server (use the OAuth2 URL Generator in the Developer Portal, check the “bot” scope, give it permissions, and copy the generated invite link).
+4. Invite your bot to a Discord server (use the OAuth2 URL Generator in the Developer Portal, check the “bot” scope, give it permissions, and copy the generated invite link).
 
-   ![Bot running locally](images/bot-running.png)
-   *(Screenshot of terminal showing bot is online.)*
+   ![image](https://github.com/user-attachments/assets/06ae6fe1-8092-475f-a78f-27fe6622a3c5)
 
 ---
 
@@ -150,7 +134,37 @@ Note: click these three buttons that are present in the same Bot section
 
 2. Click **New** → **Web Service** → **Connect to GitHub** → select your `ShapesInc_For_Discord` repo.
 
-3. Under **Environment**, add these variables exactly as in your `.env` file:
+![Give your workspace name and select free plan](https://github.com/user-attachments/assets/8d1cccc2-1895-404d-80ad-9b74fecfc80d)
+
+![Select the service you want i choose web service(2nd one)](https://github.com/user-attachments/assets/30fc2400-ced2-4a53-bc8f-20a4be631264)
+
+![Connect your github account(you can also host your private github repos)](https://github.com/user-attachments/assets/177f1bfe-280c-418f-9ee8-d46e288fe280)
+
+![Go to configuration](https://github.com/user-attachments/assets/6edf5b52-df19-4a27-a5b2-bc361de1728b)
+
+![select the repo you wanna use then press save. Now close the window and get back to render](https://github.com/user-attachments/assets/372d3601-1918-4ee0-9929-d327eafbe0bf)
+
+8. Now you can able to see the repo, by clicking the repo name you will be redirect to deployment configuration do the steps as below.
+   1. name your project
+  
+   2. In the **Build Command** field, enter:
+      
+   ```bash
+   pip install --upgrade pip && pip3 install -r requirements.txt
+   ```
+      
+   3. In the **Start Command** field(if you by any chance renamed your main.py file to anything else for example something.py then use `python3 something.py`), enter:
+      
+   ```bash
+   python3 main.py
+   ```
+     
+![image](https://github.com/user-attachments/assets/cba756b0-270c-4437-98a4-f85093e1ea06)
+
+9. Configure your environment variable
+![image](https://github.com/user-attachments/assets/322bd923-735e-4553-9884-4308d07cd7e3)
+
+ Under **Environment**, add these variables exactly as in your `.env` file:
 
    | Key              | Value                          |
    | ---------------- | ------------------------------ |
@@ -159,17 +173,6 @@ Note: click these three buttons that are present in the same Bot section
    | DISCORD\_TOKEN   | (your\_discord\_bot\_token)    |
    | MODEL            | (your\_shapesinc\_model\_name) |
 
-4. In the **Build Command** field, enter:
-
-   ```
-   pip install --upgrade pip && pip3 install -r requirements.txt
-   ```
-
-5. In the **Start Command** field, enter:
-
-   ```
-   python3 main.py
-   ```
 
 6. Click **Create Web Service**. Render will read your repo, install dependencies, and run your bot automatically.
 
