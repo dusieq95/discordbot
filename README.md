@@ -136,9 +136,9 @@ pip3 install -r requirements.txt
 
  **Configure Environment Variables**
 
-- In the repo folder, create a file named `.env` (if it doesn’t exist).
+- In the repo folder, rename `test.env` to `.env` (if it doesn’t exist create one).
    
-- Open `.env` in your text editor and add:
+- Open `.env` in your text editor and Replace each placeholder in quotes with your actual values.
 
 ```ini
 SHAPES_API_KEY="your_shapesinc_api_key_here"
@@ -146,8 +146,6 @@ SHAPES_APP_ID="your_shapesinc_app_id_here"
 DISCORD_TOKEN="your_discord_bot_token_here"
 MODEL="your_shapesinc_model_name_here"
 ```
-
-- Replace each placeholder in quotes with your actual values.
    
 3. **Start the Bot**
 
