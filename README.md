@@ -116,7 +116,7 @@ Note: click these three buttons that are present in the same Bot section
 
 2. Save that and run:
 
-   ```bash
+   ```ruby
    python3 main.py
    ```
 
@@ -149,13 +149,13 @@ Note: click these three buttons that are present in the same Bot section
   
    2. In the **Build Command** field, enter:
       
-   ```bash
+   ```ruby
    pip install --upgrade pip && pip3 install -r requirements.txt
    ```
       
    3. In the **Start Command** field(if you by any chance renamed your main.py file to anything else for example something.py then use `python3 something.py`), enter:
       
-   ```bash
+   ```ruby
    python3 main.py
    ```
      
@@ -187,7 +187,7 @@ Note: click these three buttons that are present in the same Bot section
 
 1. In any Discord channel where your bot is invited, type:
 
-   ```ini
+   ```ruby
    /authorize
    ```
 2. The bot will reply with a private link (only you can see it).
@@ -201,7 +201,7 @@ Note: click these three buttons that are present in the same Bot section
 
 6. Back in Discord, type (replace `KJXM9ZUM` with the one you got):
 
-   ```ini
+   ```ruby
    /authorize code:KJXM9ZUM
    ```
    
