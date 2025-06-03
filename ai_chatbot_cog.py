@@ -107,7 +107,7 @@ class AIChatbotCog(commands.Cog):
     return self.bot.pool
     
   async def user(self, id: int) -> ShapeUser:
-    u=await DBUser.get_or_create(id=id, sid=str(id)[5:])
+    u=(await DBUser.get_or_create(id=id, sid=str(id)[5:]))[0]
     kw={}
     if u.auth_token:
         kw["auth_token"]=u.auth_token
@@ -142,7 +142,7 @@ class AIChatbotCog(commands.Cog):
     description="Toggle active listening in this channel"
   )
   async def active(self, interaction: discord.Interaction):
-    c = await DBChannel.get_or_create(id=interaction.channel_id)
+    c = (await DBChannel.get_or_create(id=interaction.channel_id))[0]
     
     if c.active:
       # self.active_channels.remove(cid)
@@ -160,7 +160,7 @@ class AIChatbotCog(commands.Cog):
   async def deactivate(self, ctx, channel: discord.TextChannel = None):
     """Deactivates auto-chatbot in a channel!"""
     channel = channel or ctx.channel
-    c = await DBChannel.get_or_create(id=channel.id)
+    c = (await DBChannel.get_or_create(id=channel.id))[0]
     if c.active:
       # self.active_channels.remove(cid)
       await c.toggle_active()
@@ -172,7 +172,7 @@ class AIChatbotCog(commands.Cog):
   async def activate(self, ctx, channel: discord.TextChannel = None):
     """Activates auto-chatbot in a channel!"""
     channel = channel or ctx.channel
-    c = await DBChannel.get_or_create(id=channel.id)
+    c = (await DBChannel.get_or_create(id=channel.id))[0]
     if not c.active:
       # self.active_channels.add(cid)
       await c.toggle_active()
@@ -232,7 +232,7 @@ class AIChatbotCog(commands.Cog):
           pass
 
       ch = await DBChannel.get_or_create(id=message.channel.id)
-      is_active = ch.active
+      is_active = ch[0].active
       # If the channel is active, or we're mentioned/replied‐to, or
       # a keyword triggered, proceed; otherwise bail out.
       if not (is_active or is_mentioned or is_reply_to_bot or forced_active):
