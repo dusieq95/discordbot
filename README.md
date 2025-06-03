@@ -103,8 +103,10 @@
 4. Under the Bot section, find **Token** and click **Copy**.
 5. Paste that token into your `.env` file as `DISCORD_TOKEN`.
 
-   ![Discord Developer Portal showing Bot Token](images/discord-token.png)
-   *(Add a screenshot of the token area, but DO NOT share your real token in public.)*
+  ![image](https://github.com/user-attachments/assets/31ea3aaf-2ee3-44e0-a8df-d004179f2b3d)
+
+Note: click these three buttons that are present in the same Bot section
+![image](https://github.com/user-attachments/assets/5c3568c8-45ba-4899-a672-e837507fdb69)
 
 ---
 
