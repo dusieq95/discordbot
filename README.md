@@ -1,5 +1,3 @@
----
-
 ## 📚 ShapesInc AI Chatbot for Discord — User Manual
 
 ### 1. What My Own Bot Does
