@@ -6,6 +6,7 @@ import time
 import asyncio
 from discord.ext import commands
 from keep_alive import keepa_alive
+from tortoise import Tortoise
 from shapesinc import (
   shape,
   AsyncShape,
@@ -40,9 +41,9 @@ class AIChatBot(commands.Bot):
         intents = discord.Intents.all()
         
         super().__init__(
-        command_prefix='$',  # You can change this prefix as needed
-        intents=intents,
-       # help_command=None  # Disable default help command if you want
+          command_prefix='$',  # You can change this prefix as needed
+          intents=intents,
+          # help_command=None  # Disable default help command if you want
         )
 
     async def setup_hook(self):
@@ -52,17 +53,25 @@ class AIChatBot(commands.Bot):
             await self.load_extension("ai_chatbot_cog")
             await self.load_extension("jishaku")
             logging.info("✅ AI Chatbot cog loaded successfully")
+            await Tortoise.init(config=config.tortoise)
+            await Tortoise.generate_schemas(safe=True)
+            logging.info("✅ DB loaded!")
+      
         
-            # Load the image caption cog
-            # await self.load_extension('image_caption_cog')
-            # logging.info("✅ Image Caption cog loaded successfully")
-            
-            # Sync slash commands
             await self.tree.sync()
             logging.info("✅ Slash commands synced")
         except Exception as e:
-            logging.error(f"❌ Failed to load cog: {e}")
+            # logging.error(f"❌ Failed to load cog: {e}")
+            raise e
 
+  
+    @property
+    def pool(self):
+        try:
+            return Tortoise.get_connection("default")._pool
+        except:
+            return None
+          
     async def on_ready(self):
         logging.info(f"🤖 {self.user} is now online!")
         logging.info(f"📊 Connected to {len(self.guilds)} servers")
