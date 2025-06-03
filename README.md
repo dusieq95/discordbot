@@ -1,7 +1,3 @@
-```markdown
-![Short description of this image](path/to/your-image.png)
-```
-
 ---
 
 ## 📚 ShapesInc AI Chatbot for Discord — User Manual
