@@ -143,8 +143,8 @@ class AIChatbotCog(commands.Cog):
   )
   async def active(self, interaction: discord.Interaction):
     c = await DBChannel.get_or_create(id=interaction.channel_id)
-    await c.toggle_active()
-    if not c.active:
+    
+    if c.active:
       # self.active_channels.remove(cid)
       await interaction.response.send_message(
         f"🔕 I will now ignore this channel.", ephemeral=True
@@ -154,6 +154,7 @@ class AIChatbotCog(commands.Cog):
       await interaction.response.send_message(
         f"✅ I am now active in this channel!", ephemeral=True
       )
+    await c.toggle_active()
 
   @commands.command()
   async def deactivate(self, ctx, channel: discord.TextChannel = None):
@@ -162,6 +163,7 @@ class AIChatbotCog(commands.Cog):
     c = await DBChannel.get_or_create(id=channel.id)
     if c.active:
       # self.active_channels.remove(cid)
+      await c.toggle_active()
       return await ctx.reply("🔕 Deactivated: back to mention-only mode.")
       
     await ctx.reply("⚠️ I'm not currently activated here.")
@@ -173,6 +175,7 @@ class AIChatbotCog(commands.Cog):
     c = await DBChannel.get_or_create(id=channel.id)
     if not c.active:
       # self.active_channels.add(cid)
+      await c.toggle_active()
       return await ctx.reply("✅ Activated: I'll now listen here without a mention.")
 
     await ctx.reply("⚠️ I'm already activated in this channel.")
@@ -228,7 +231,8 @@ class AIChatbotCog(commands.Cog):
         except Exception:
           pass
 
-      is_active = (await DBChannel.get_or_create(id=message.channel.id)).active
+      ch = await DBChannel.get_or_create(id=message.channel.id)
+      is_active = ch.active
       # If the channel is active, or we're mentioned/replied‐to, or
       # a keyword triggered, proceed; otherwise bail out.
       if not (is_active or is_mentioned or is_reply_to_bot or forced_active):
