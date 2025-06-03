@@ -1,4 +1,4 @@
-import os
+import os, config
 import discord
 import logging
 import time
@@ -33,17 +33,6 @@ shapes = shape(SHAPES_API_KEY, MODEL, SHAPES_APP_ID, synchronous=False)
 
 user = User("0")
 # channel = Channel("0")
-flags = [
-  "no underscore",
-  "hide",
-  "retain",
-  "force paginator",
-  "no dm_traceback",
-]
-
-
-for flag in flags: os.environ[("jishaku_"+flag).upper().replace(" ","_")] = "t"
-del flags
 # ─── BOT SETUP ─────────────────────────────────────────────────────────────────
 class AIChatBot(commands.Bot):
     shape: AsyncShape
