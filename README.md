@@ -229,6 +229,11 @@ Note: click these three buttons that are present in the same Bot section
 
 ---
 
+## 7. Special Thanks & Shout-Out
+Big thanks to **[Rishi]**, whose [ShapesInc Library](https://github.com/Rishiraj0100/shapesinc-py) made building this chatbot so much smoother. Your work and contributions to this repo are truly appreciated!
+
+---
+
 ### 7. Congrats—You’re Done!
 
 If you followed these steps, your **self-hosted** ShapesInc AI Chatbot for Discord should be up and running!.
