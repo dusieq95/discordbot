@@ -5,8 +5,9 @@ from os import environ as env
 tortoise = {
   "connections": {
     # "default": expand_db_url(postgres_database_url)
-    # "default": expand_db_url(db)
-    "default": expand_db_url("sqlite://tempdb")
+    # PostgreSQL Db URI
+    "default": expand_db_url("postgresql://postgres:[YOUR-PASSWORD]@db.inaqcxovtliyknwtxrqb.supabase.co:5432/postgres")
+    # "default": expand_db_url("sqlite://tempdb")
   },
   "apps": {
     "default": {
