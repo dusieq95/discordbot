@@ -9,7 +9,7 @@
 - **Natural Conversations:** Chat as if you’re talking to a real person.
 - **On-Demand Code Generation:** Request code snippets tailored to your prompts.
 - **User Recognition:** Maintains separate contexts for each Discord user, so it never confuses one user for another.
-- **Secure Authorization:** Requires each user to verify via `/authorize` before chatting—ensuring the bot knows who it’s talking to.
+- **Secure Authorization:** Requires each user to verify via `/authorize` before chatting ensuring the bot knows who it’s talking to.
 
 ---
 
