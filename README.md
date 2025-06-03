@@ -162,7 +162,6 @@ Note: click these three buttons that are present in the same Bot section
 ![image](https://github.com/user-attachments/assets/cba756b0-270c-4437-98a4-f85093e1ea06)
 
 9. Configure your environment variable
-![image](https://github.com/user-attachments/assets/322bd923-735e-4553-9884-4308d07cd7e3)
 
  Under **Environment**, add these variables exactly as in your `.env` file:
 
@@ -176,31 +175,39 @@ Note: click these three buttons that are present in the same Bot section
 
 6. Click **Create Web Service**. Render will read your repo, install dependencies, and run your bot automatically.
 
+![image](https://github.com/user-attachments/assets/322bd923-735e-4553-9884-4308d07cd7e3)
+
 7. Whenever you push code to GitHub, Render will re-deploy it for you.
 
-   ![Render environment variables setup](images/render-env.png)
-   *(Add a screenshot of Render’s environment variable form.)*
-
+![image](https://github.com/user-attachments/assets/78f86c8c-a7b9-4313-a827-7f2b8cc0aa10)
+   
 ---
 
 ### 4. How to Use `/authorize`
 
 1. In any Discord channel where your bot is invited, type:
 
-   ```
+   ```ini
    /authorize
    ```
 2. The bot will reply with a private link (only you can see it).
-3. Click the link, copy the **authorization code** you see.
-4. Back in Discord, type (replace `CODE123` with the one you got):
 
-   ```
-   /authorize code:CODE123
-   ```
-5. If successful, the bot will say “You are now verified!” and you can start chatting or sending images.
+   ![image](https://github.com/user-attachments/assets/3c7ee059-1c26-4a99-89d2-a91cf3bfad63)
 
-   ![Authorize flow in Discord](images/authorize-flow.png)
-   *(Insert a screenshot of the bot replying with the link, and then the user sending `/authorize code:...`.)*
+4. Click the link, copy the **authorization code** you see.
+
+   ![Shapes Authorized code](https://github.com/user-attachments/assets/47e92ea5-a31c-42b4-b4a2-85bb995748b7)
+
+
+6. Back in Discord, type (replace `KJXM9ZUM` with the one you got):
+
+   ```ini
+   /authorize code:KJXM9ZUM
+   ```
+   
+7. If successful, the bot will say “Successfully Autholrised!” and you can start chatting or sending images.
+
+   ![Successfully authorised](https://github.com/user-attachments/assets/0bf4adc6-784d-4b3e-ab0b-4d1924ed4cce)
 
 ---
 
