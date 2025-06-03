@@ -73,14 +73,18 @@
 
 8. Now you can able to see the repo, by clicking the repo name you will be redirect to deployment configuration do the steps as below.
      1. name your project
+  
      2. use this on Build Command
+  
      ```bash
      pip install --upgrade pip && pip3 install -r requirements.txt
      ```
+     
      3. use this on Start Command(if you by any chance renamed your main.py file to anything else for example something.py then use `python3 something.py`)
-  ```bash
-  python3 main.py 
-  ```
+     ```bash
+     python3 main.py 
+     ```
+     
 ![image](https://github.com/user-attachments/assets/cba756b0-270c-4437-98a4-f85093e1ea06)
 
 9. Configure your environment variable
