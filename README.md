@@ -35,7 +35,7 @@
 
 #### 3.2. Get Your ShapesInc API Key & App ID
 
-1. Go to [ShapesInc Developer section]([https://shapes.inc/developer)) if you haven't signup or log in then do that first.
+1. Go to [ShapesInc Developer section]([https://shapes.inc/developer) if you haven't signup or log in then do that first.
 2. Navigate to **Create New API Key** (or similar).
 3. Select 3rd option **APPLICATION**
 4. name the **key** then press **Generate API Key** 
