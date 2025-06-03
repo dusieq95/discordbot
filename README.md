@@ -248,7 +248,7 @@ Successfully Authorised!
 
 ![Successfully Authorised](https://github.com/user-attachments/assets/0bf4adc6-784d-4b3e-ab0b-4d1924ed4cce)
 
-Now you start you chatting with the bot
+Now you can start your conversation with the bot
 ---
 
 ### 5. Common Troubleshooting
