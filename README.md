@@ -184,7 +184,7 @@ python3 main.py
 
 - **Name** your service (e.g., `shapesinc-discord-bot`).
    
-- For **Environment**, select **Python 3** (the default is fine).
+- For **Environment**, select **Python3** (the default is fine).
 
 - In **Build Command**, enter:
    
@@ -259,7 +259,7 @@ Now you can start your conversation with the bot
    
 - Ensure you ran `pip3 install -r requirements.txt`.
 
-- Check your Discord token—if it was regenerated or revoked, update it in your environment.
+- Check your Discord token if it was regenerated or revoked, update it in your environment.
    
 - **Bot Is Online but Doesn’t Respond**
 
@@ -269,7 +269,7 @@ Now you can start your conversation with the bot
 
 - **“Invalid Authorization Code” When Using `/authorize`**
 
-- Copy the code exactly—no extra spaces or line breaks.
+- Copy the code exactly no extra spaces or line breaks.
    
 - Ensure you clicked the link from the same Discord account that ran `/authorize`.
    
