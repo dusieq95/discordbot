@@ -237,3 +237,4 @@ Big thanks to **@Rishiraj0100**, whose [ShapesInc Library](https://github.com/Ri
 ### 7. Congrats—You’re Done!
 
 If you followed these steps, your **self-hosted** ShapesInc AI Chatbot for Discord should be up and running!.
+![ShapesInc Dashboard showing API keys](https://github.com/user-attachments/assets/108d9a52-8ef4-42d1-9366-2c347ef856cf)
