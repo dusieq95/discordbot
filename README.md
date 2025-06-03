@@ -1,6 +1,6 @@
 ## 📚 ShapesInc AI Chatbot for Discord — User Manual
 
-### 1. What My Own Bot Does
+### 1. What This Bot Does
 
 * **Reads images:** You can send pictures, and the bot understands them.
 * **Chats like a real human:** Text conversations feel natural.
