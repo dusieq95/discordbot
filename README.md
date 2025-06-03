@@ -44,7 +44,7 @@
 
 ---
 
-#### 3.4. Create Your Discord Bot & Get Token
+#### 3.3. Create Your Discord Bot & Get Token
 
 1. Go to the [Discord Developer Portal](https://discord.com/developers/applications).
 2. Click **New Application**, give it a name (e.g. “My ShapesInc Bot”), and click **Create**.
@@ -59,11 +59,11 @@ Note: click these three buttons that are present in the same Bot section
 
 ---
 
-#### 3.5. Run Locally (Optional)
+#### 3.4. Run Locally (Optional)
 
 > **Note:** Running on your local computer is fine for testing, but it will stop working if you close your machine or lose internet.
 
-   #### 3.6. Install Dependencies
+   #### 3.4.1. Install Dependencies
    
    1. Make sure you have **Python 3** installed.
    2. In your terminal, run (inside the cloned folder):
@@ -128,7 +128,7 @@ Note: click these three buttons that are present in the same Bot section
 
 ---
 
-#### 3.7. Host on Render (Recommended for 24/7 Uptime)
+#### 3.5. Host on Render (Recommended for 24/7 Uptime)
 
 1. Go to [Render.com](https://render.com/) and **sign up** (you can use GitHub to log in).
 
@@ -205,7 +205,7 @@ Note: click these three buttons that are present in the same Bot section
    /authorize code:KJXM9ZUM
    ```
    
-7. If successful, the bot will say “Successfully Autholrised!” and you can start chatting or sending images.
+7. If successful, the bot will say “Successfully Authorised!” and you can start chatting or sending images.
 
    ![Successfully authorised](https://github.com/user-attachments/assets/0bf4adc6-784d-4b3e-ab0b-4d1924ed4cce)
 
@@ -213,7 +213,7 @@ Note: click these three buttons that are present in the same Bot section
 
 ### 5. Common Troubleshooting
 
-* **Bot doesn’t start / crash on launch:**
+* **Bot doesn’t start/crash on launch:**
 
   * Double-check that your `.env` (or Render environment variables) are correct—no extra spaces or missing quotes.
   * Ensure you ran `pip3 install -r requirements.txt`.
@@ -229,7 +229,7 @@ Note: click these three buttons that are present in the same Bot section
 
 ---
 
-## 7. Special Thanks!
+## 6. Special Thanks!
 Big thanks to **@Rishiraj0100**, whose [ShapesInc Library](https://github.com/Rishiraj0100/shapesinc-py) made building this chatbot so much smoother. Your work and contributions to this repo are truly appreciated!
 
 ---
