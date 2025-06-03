@@ -165,9 +165,12 @@ python3 main.py
    
 - Under **Bot Permissions**, select **Send Messages**, **Read Message History**, and **Use Slash Commands** (at minimum).
 
-- Copy the generated invite link and open it in your browser to add the bot to a server you manage.  
-![Invite Bot to Server](https://github.com/user-attachments/assets/06ae6fe1-8092-475f-a78f-27fe6622a3c5)
+- Copy the generated invite link and open it in your browser to add the bot to a server you manage.
 
+![Invite Bot to Server](https://github.com/user-attachments/assets/503e8d26-ebd0-41aa-bed6-1b3472400e0c)
+
+
+![Invite Bot to Server](https://github.com/user-attachments/assets/06ae6fe1-8092-475f-a78f-27fe6622a3c5)
 
 ---
 
