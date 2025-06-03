@@ -229,25 +229,6 @@ Note: click these three buttons that are present in the same Bot section
 
 ---
 
-### 6. Adding Your Own Images
-
-Whenever you want to show what something looks like (for example, how to set up a Discord application or how your terminal should look), add images into a folder called `images/` (or whatever you like). Then, in the README:
-
-```markdown
-![Description of what this screenshot shows](images/your-image-file.png)
-```
-
-* Keep image filenames short and descriptive (e.g., `clone-repo.png`, `discord-token.png`).
-* Make sure to commit and push the `images/` folder alongside your README.
-
----
-
 ### 7. Congrats—You’re Done!
 
-If you followed these steps, your **self-hosted** ShapesInc AI Chatbot for Discord should be up and running.
-
-* Anyone in your server can now chat, send images, and get code suggestions.
-* Each user must run `/authorize` once to verify.
-* You can always come back to this README if you need reminders or want to add more screenshots.
-
-Happy hosting!
+If you followed these steps, your **self-hosted** ShapesInc AI Chatbot for Discord should be up and running!.
