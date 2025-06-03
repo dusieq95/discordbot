@@ -1,22 +1,25 @@
+
 ## 📚 ShapesInc AI Chatbot for Discord — User Manual
+
+---
 
 ### 1. What This Bot Does
 
-* **Reads images:** You can send pictures, and the bot understands them.
-* **Chats like a real human:** Text conversations feel natural.
-* **Writes code on request:** Ask it to generate code snippets.(vary depending upon what prompts you gave to your own bot)
-* **Recognizes each Discord user:** It won’t confuse everyone for “you.”
-* **Secure “/authorize” system:** Each person must verify themselves before chatting so it won't get confuse by whom it talking to.
+- **Image Understanding:** Send pictures, and the bot will describe or respond to them.
+- **Natural Conversations:** Chat as if you’re talking to a real person.
+- **On-Demand Code Generation:** Request code snippets tailored to your prompts.
+- **User Recognition:** Maintains separate contexts for each Discord user, so it never confuses one user for another.
+- **Secure Authorization:** Requires each user to verify via `/authorize` before chatting—ensuring the bot knows who it’s talking to.
 
 ---
 
 ### 2. Prerequisites
 
-1. **A GitHub account** (to clone the repo).
-2. **A ShapesInc account** (for your API key and App ID).
-3. **A Discord account** (to create your own Discord Bot).
-4. **Basic computer with internet access.**
-5. (Optional) A hosting service (if you don’t want to run it on your local machine). We’ll show a step by step of how to use a free service called [Render](https://render.com/) below(no credit card required!), but you can pick any service that reads from GitHub.
+- **GitHub Account** (to clone the repository).  
+- **ShapesInc Account** (to obtain your API key and App ID).  
+- **Discord Account** (to create and manage your Discord bot).  
+- **Internet-Connected Computer** (to run and test the bot).  
+- **Optional Hosting Service** (if you need 24/7 uptime). We’ll demonstrate using [Render](https://render.com/), which has a free tier and doesn’t require a credit card. You can substitute any service that integrates with GitHub.
 
 ---
 
@@ -24,217 +27,258 @@
 
 #### 3.1. Clone This Repository
 
-1. Open a terminal (Command Prompt, PowerShell, or any shell).
-2. Run:
-
-   ```bash
+* Open a terminal (Command Prompt, PowerShell, or any shell).
+*  Run:
+*  
+   ```css
    git clone https://github.com/Psyphen36/ShapesInc_For_Discord.git
    cd ShapesInc_For_Discord
    ```
----
-
-#### 3.2. Get Your ShapesInc API Key & App ID
-
-1. Go to [ShapesInc Developer section](https://shapes.inc/developer) if you haven't signup or log in then do that first.
-2. Navigate to **Create New API Key** (or similar).
-3. Select 3rd option **APPLICATION**
-4. name the **key** then press **Generate API Key** 
-
-   ![ShapesInc Dashboard showing API keys](https://github.com/user-attachments/assets/108d9a52-8ef4-42d1-9366-2c347ef856cf)
 
 ---
 
-#### 3.3. Create Your Discord Bot & Get Token
+#### 3.2. Obtain Your ShapesInc API Key & App ID
 
-1. Go to the [Discord Developer Portal](https://discord.com/developers/applications).
-2. Click **New Application**, give it a name (e.g. “My ShapesInc Bot”), and click **Create**.
-3. In the left menu, select **Bot** → **Add Bot** → **Yes, do it!**
-4. Under the Bot section, find **Token** and click **Copy**.
-5. Paste that token into your `.env` file as `DISCORD_TOKEN`.
+* Visit the [ShapesInc Developer section](https://shapes.inc/developer). If you don’t have an account, sign up or log in.
+   
+* Navigate to **Create New API Key** (or similar).
 
-  ![image](https://github.com/user-attachments/assets/31ea3aaf-2ee3-44e0-a8df-d004179f2b3d)
+* Select **APPLICATION** as the key type.
+   
+* Give the key a name, then click **Generate API Key**.
 
-Note: click these three buttons that are present in the same Bot section
-![image](https://github.com/user-attachments/assets/5c3568c8-45ba-4899-a672-e837507fdb69)
+* Copy both the **API Key** and the **App ID**.
+
+
+![ShapesInc Dashboard showing API keys](https://github.com/user-attachments/assets/108d9a52-8ef4-42d1-9366-2c347ef856cf)
+
+---
+
+#### 3.3. Create Your Discord Bot & Retrieve the Token
+
+* Go to the [Discord Developer Portal](https://discord.com/developers/applications).
+
+* Click **New Application**, enter a name (e.g., “My ShapesInc Bot”), and click **Create**.
+
+* In the left sidebar, select **Bot** → **Add Bot** → **Yes, do it!**
+
+* Under the **Bot** section, locate **Token** and click **Copy**.
+
+* Save this token for your `.env` file under `DISCORD_TOKEN`.
+
+
+![Discord Bot Token](https://github.com/user-attachments/assets/31ea3aaf-2ee3-44e0-a8df-d004179f2b3d)
+
+> **Reminder:** In the same **Bot** section, click the three-dot menu (⚙️) to enable the following:
+> 
+> - **Presence Intent**
+>     
+> - **Server Members Intent**
+>     
+> - **Message Content Intent**
+>     
+> 
+> ![Enable Bot Intents](https://github.com/user-attachments/assets/5c3568c8-45ba-4899-a672-e837507fdb69)
 
 ---
 
 #### 3.4. Run Locally (Optional)
 
-> **Note:** Running on your local computer is fine for testing, but it will stop working if you close your machine or lose internet.
+> **Note:** Running locally is great for testing, but the bot will go offline if your computer shuts down or loses internet.
 
-   #### 3.4.1. Install Dependencies
+
+* **Install Dependencies**
+
+- Ensure you have **Python 3** installed.
+  
+- In the cloned repo’s root folder, run:
+  
+ ```css
+ pip install --upgrade pip
+ pip3 install -r requirements.txt
+ ```
    
-   1. Make sure you have **Python 3** installed.
-   2. In your terminal, run (inside the cloned folder):
+ - If you see the error:
+  
+  ```css
+   error: externally-managed-environment
+  ```
+ 
+   create a virtual environment:
+  
+ ```ruby
+ python3 -m venv ChatBot_env
+ ```
+  
+   Activate it:
+  
+  - On Linux/macOS:
+  
+```bash
+source ChatBot_env/bin/activate
+``` 
    
-      ```ruby
-      pip install --upgrade pip
-      pip3 install -r requirements.txt
-      ```
+- On Windows (PowerShell):
+
+```css
+ChatBot_env\Scripts\Activate.ps1
+```
+
+- After activation, rerun:
    
-      This will download all the Python packages the bot needs.
+```css
+pip install --upgrade pip
+pip3 install -r requirements.txt
+```
+
+
+![Installing Dependencies](https://github.com/user-attachments/assets/f866007e-fb7b-49a0-b262-4112373957d5)
+
+ **Configure Environment Variables**
+
+- In the repo folder, create a file named `.env` (if it doesn’t exist).
    
-      if you getting this error:
-      ![error: externally-managed-environment](https://github.com/user-attachments/assets/de7885e9-c287-407a-ad58-7f32b4a0b83f)
+- Open `.env` in your text editor and add:
+
+```ini
+SHAPES_API_KEY="your_shapesinc_api_key_here"
+SHAPES_APP_ID="your_shapesinc_app_id_here"
+DISCORD_TOKEN="your_discord_bot_token_here"
+MODEL="your_shapesinc_model_name_here"
+```
+
+- Replace each placeholder in quotes with your actual values.
    
-      then use:
-      ```ruby
-      python3 -m venv ChatBot_env
-      ```
+3. **Start the Bot**
+
+```css
+python3 main.py
+```
+
+- You should see log messages like “Bot is starting…” and “Connected to Discord.”
    
-      You can name `ChatBot_env` to anything you want
+4. **Invite Your Bot to a Server**
+
+- In the Developer Portal, go to **OAuth2 → URL Generator**.
+
+- Under **Scopes**, check **bot**.
    
-      then enable your environment by using:
-      
-      ```bash
-      source ChatBot/bin/activate
-      ```
-   
-      ![Installing Dependencies](https://github.com/user-attachments/assets/f866007e-fb7b-49a0-b262-4112373957d5)
+- Under **Bot Permissions**, select **Send Messages**, **Read Message History**, and **Use Slash Commands** (at minimum).
 
-1. In your terminal (still inside the repo folder), create a file named .env (if it doesn’t exist).
-   
-   Open .env in a text editor, and paste in:
+- Copy the generated invite link and open it in your browser to add the bot to a server you manage.  
+![Invite Bot to Server](https://github.com/user-attachments/assets/06ae6fe1-8092-475f-a78f-27fe6622a3c5)
 
-   ```ini
-   SHAPES_API_KEY="your_shapesinc_api_key_here"
-   SHAPES_APP_ID="your_shapesinc_app_id_here"
-   DISCORD_TOKEN="your_discord_bot_token_here"
-   MODEL="your_shapesinc_model_name_here"
-   ```
-
-   Replace each placeholder in quotes with your actual values.
-   
-    **SHAPES_API_KEY**: Paste the API Key from ShapesInc.
-
-    **SHAPES_APP_ID**: Paste the App ID from ShapesInc.
-
-    **DISCORD_TOKEN**: You’ll get this in the next section.
-
-    **MODEL**: This should match your bot’s “model name” on ShapesInc (e.g. if you named your bot “otahun,” then MODEL="otahun").
-
-2. Save that and run:
-
-   ```ruby
-   python3 main.py
-   ```
-
-3. You should see messages like “Bot is starting…” and “Connected to Discord.”
-
-4. Invite your bot to a Discord server (use the OAuth2 URL Generator in the Developer Portal, check the “bot” scope, give it permissions, and copy the generated invite link).
-
-   ![image](https://github.com/user-attachments/assets/06ae6fe1-8092-475f-a78f-27fe6622a3c5)
 
 ---
 
 #### 3.5. Host on Render (Recommended for 24/7 Uptime)
 
-1. Go to [Render.com](https://render.com/) and **sign up** (you can use GitHub to log in).
+* Go to [Render.com](https://render.com/) and **Sign Up** (use GitHub for faster setup).
 
-2. Click **New** → **Web Service** → **Connect to GitHub** → select your `ShapesInc_For_Discord` repo.
+* Click **New** → **Web Service** → **Connect to GitHub** → Select your `ShapesInc_For_Discord` repo.  
+![Connect GitHub to Render](https://github.com/user-attachments/assets/177f1bfe-280c-418f-9ee8-d46e288fe280)
 
-![Give your workspace name and select free plan](https://github.com/user-attachments/assets/8d1cccc2-1895-404d-80ad-9b74fecfc80d)
+*  In the **Create Web Service** dialog:
 
-![Select the service you want i choose web service(2nd one)](https://github.com/user-attachments/assets/30fc2400-ced2-4a53-bc8f-20a4be631264)
-
-![Connect your github account(you can also host your private github repos)](https://github.com/user-attachments/assets/177f1bfe-280c-418f-9ee8-d46e288fe280)
-
-![Go to configuration](https://github.com/user-attachments/assets/6edf5b52-df19-4a27-a5b2-bc361de1728b)
-
-![select the repo you wanna use then press save. Now close the window and get back to render](https://github.com/user-attachments/assets/372d3601-1918-4ee0-9929-d327eafbe0bf)
-
-8. Now you can able to see the repo, by clicking the repo name you will be redirect to deployment configuration do the steps as below.
-   1. name your project
-  
-   2. In the **Build Command** field, enter:
-      
-   ```ruby
-   pip install --upgrade pip && pip3 install -r requirements.txt
-   ```
-      
-   3. In the **Start Command** field(if you by any chance renamed your main.py file to anything else for example something.py then use `python3 something.py`), enter:
-      
-   ```ruby
-   python3 main.py
-   ```
-     
-![image](https://github.com/user-attachments/assets/cba756b0-270c-4437-98a4-f85093e1ea06)
-
-9. Configure your environment variable
-
- Under **Environment**, add these variables exactly as in your `.env` file:
-
-   | Key              | Value                          |
-   | ---------------- | ------------------------------ |
-   | SHAPES\_API\_KEY | (your\_shapesinc\_api\_key)    |
-   | SHAPES\_APP\_ID  | (your\_shapesinc\_app\_id)     |
-   | DISCORD\_TOKEN   | (your\_discord\_bot\_token)    |
-   | MODEL            | (your\_shapesinc\_model\_name) |
-
-
-6. Click **Create Web Service**. Render will read your repo, install dependencies, and run your bot automatically.
-
-![image](https://github.com/user-attachments/assets/322bd923-735e-4553-9884-4308d07cd7e3)
-
-7. Whenever you push code to GitHub, Render will re-deploy it for you.
-
-![image](https://github.com/user-attachments/assets/78f86c8c-a7b9-4313-a827-7f2b8cc0aa10)
+- **Name** your service (e.g., `shapesinc-discord-bot`).
    
+- For **Environment**, select **Python 3** (the default is fine).
+
+- In **Build Command**, enter:
+   
+```css
+pip install --upgrade pip && pip3 install -r requirements.txt
+```
+
+- In **Start Command**, enter:
+   
+```css
+python3 main.py
+```
+
+> If you renamed `main.py`, replace it with the new filename (e.g., `python3 bot.py`).  
+> ![Render Build & Start Commands](https://github.com/user-attachments/assets/cba756b0-270c-4437-98a4-f85093e1ea06)
+
+* **Add Environment Variables** under **Environment** (matching your `.env`):
+
+| Key            | Value                     |
+| -------------- | ------------------------- |
+| SHAPES_API_KEY | your_shapesinc_api_key    |
+| SHAPES_APP_ID  | your_shapesinc_app_id     |
+| DISCORD_TOKEN  | your_discord_bot_token    |
+| MODEL          | your_shapesinc_model_name |
+
+* Click **Create Web Service**. Render will clone the repo, install dependencies, and deploy your bot.
+
+* Whenever you push updates to GitHub, Render automatically redeploys your bot.  
+![Render Deployment Success](https://github.com/user-attachments/assets/322bd923-735e-4553-9884-4308d07cd7e3)  
+![Render Auto Redeploy](https://github.com/user-attachments/assets/78f86c8c-a7b9-4313-a827-7f2b8cc0aa10)
+
 ---
 
 ### 4. How to Use `/authorize`
 
-1. In any Discord channel where your bot is invited, type:
+* In any channel where your bot is present, type:
 
-   ```ruby
-   /authorize
-   ```
-2. The bot will reply with a private link (only you can see it).
+```ruby
+/authorize
+```
 
-   ![image](https://github.com/user-attachments/assets/3c7ee059-1c26-4a99-89d2-a91cf3bfad63)
+* The bot will reply with a private link (only visible to you).  
+![Authorize Link](https://github.com/user-attachments/assets/3c7ee059-1c26-4a99-89d2-a91cf3bfad63)
 
-4. Click the link, copy the **authorization code** you see.
+* Click the link and copy the **authorization code** displayed.  
+![Shapes Authorized Code](https://github.com/user-attachments/assets/47e92ea5-a31c-42b4-b4a2-85bb995748b7)
 
-   ![Shapes Authorized code](https://github.com/user-attachments/assets/47e92ea5-a31c-42b4-b4a2-85bb995748b7)
+4. Return to Discord and run:
 
+```ruby
+/authorize code:YOUR_CODE_HERE
+```
 
-6. Back in Discord, type (replace `KJXM9ZUM` with the one you got):
-
-   ```ruby
-   /authorize code:KJXM9ZUM
-   ```
+- Replace `YOUR_CODE_HERE` with the code you copied.
    
-7. If successful, the bot will say “Successfully Authorised!” and you can start chatting or sending images.
+* If successful, you’ll see:
 
-   ![Successfully authorised](https://github.com/user-attachments/assets/0bf4adc6-784d-4b3e-ab0b-4d1924ed4cce)
+```text
+Successfully Authorised!
+```
+
+Now you can chat with the bot or send images.  
+![Successfully Authorised](https://github.com/user-attachments/assets/0bf4adc6-784d-4b3e-ab0b-4d1924ed4cce)
 
 ---
 
 ### 5. Common Troubleshooting
 
-* **Bot doesn’t start/crash on launch:**
+- **Bot Won’t Start or Crashes on Launch**
 
-  * Double-check that your `.env` (or Render environment variables) are correct—no extra spaces or missing quotes.
-  * Ensure you ran `pip3 install -r requirements.txt`.
-  * Check the Discord token: if it’s revoked, regenerate it in the Developer Portal.
-* **Bot is online but doesn’t respond to commands:**
+- Verify your `.env` (or Render environment variables) have no extra spaces and correct quotation marks.
+   
+- Ensure you ran `pip3 install -r requirements.txt`.
 
-  * Make sure your bot is invited to the server with the correct permissions (e.g. “Send Messages,” “Read Message History,” “Use Slash Commands”).
-  * Check that you registered the slash commands (sometimes you need to run a separate script or wait a few minutes for Discord to update).
-* **“Invalid authorization code” when using `/authorize`:**
+- Check your Discord token—if it was regenerated or revoked, update it in your environment.
+   
+- **Bot Is Online but Doesn’t Respond**
 
-  * Copy the code exactly (no extra spaces).
-  * Make sure you clicked the link from the same Discord user—only that user sees the code.
+- Confirm the bot has been invited with the right permissions (e.g., “Send Messages,” “Read Message History,” “Use Slash Commands”).
+   
+- Make sure slash commands are registered. Sometimes you need to restart the bot or wait a few minutes for Discord to sync.
 
+- **“Invalid Authorization Code” When Using `/authorize`**
+
+- Copy the code exactly—no extra spaces or line breaks.
+   
+- Ensure you clicked the link from the same Discord account that ran `/authorize`.
+   
 ---
 
-## 6. Special Thanks!
-Big thanks to **@Rishiraj0100**, whose [ShapesInc Library](https://github.com/Rishiraj0100/shapesinc-py) made building this chatbot so much smoother. Your work and contributions to this repo are truly appreciated!
+### 6. Special Thanks
+
+Big thanks to **@Rishiraj0100** for the [ShapesInc Library](https://github.com/Rishiraj0100/shapesinc-py), which made building this chatbot so much smoother. Your work and contributions are greatly appreciated!
 
 ---
 
 ### 7. Congrats—You’re Done!
 
-If you followed these steps, your **self-hosted** ShapesInc AI Chatbot for Discord should be up and running!.
-![ShapesInc Dashboard showing API keys](https://github.com/user-attachments/assets/108d9a52-8ef4-42d1-9366-2c347ef856cf)
+If you’ve followed all the steps above, your self-hosted ShapesInc AI Chatbot for Discord should be live and ready to go. Enjoy chatting and let the bot amaze you with its image understanding and code-writing capabilities!
