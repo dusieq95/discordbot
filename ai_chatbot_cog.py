@@ -106,8 +106,11 @@ class AIChatbotCog(commands.Cog):
   def db(self):
     return self.bot.pool
     
+  async def user_from_db(self, id: int) -> DBUser:
+    return (await DBUser.get_or_create(id=id, sid=str(id)[5:]))[0]
+    
   async def user(self, id: int) -> ShapeUser:
-    u=(await DBUser.get_or_create(id=id, sid=str(id)[5:]))[0]
+    u=await self.user_from_db(id)
     kw={}
     if u.auth_token:
         kw["auth_token"]=u.auth_token
@@ -127,9 +130,10 @@ class AIChatbotCog(commands.Cog):
       
     try:
       await auth(code)
+      await (await self.user_from_db(id)).set_token(user.auth_token)
     except Exception as e:
       await ctx.response.send_message(
-        f"Couldn't authorise you!", ephemeral=True
+        f"Couldn't authorise you! An error occurred, contact support!", ephemeral=True
       )
       raise e
       
