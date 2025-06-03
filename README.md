@@ -68,7 +68,7 @@ Note: click these three buttons that are present in the same Bot section
    1. Make sure you have **Python 3** installed.
    2. In your terminal, run (inside the cloned folder):
    
-      ```ini
+      ```ruby
       pip install --upgrade pip
       pip3 install -r requirements.txt
       ```
@@ -79,7 +79,7 @@ Note: click these three buttons that are present in the same Bot section
       ![error: externally-managed-environment](https://github.com/user-attachments/assets/de7885e9-c287-407a-ad58-7f32b4a0b83f)
    
       then use:
-      ```ini
+      ```ruby
       python3 -m venv ChatBot_env
       ```
    
@@ -87,7 +87,7 @@ Note: click these three buttons that are present in the same Bot section
    
       then enable your environment by using:
       
-      ```ini
+      ```bash
       source ChatBot/bin/activate
       ```
    
