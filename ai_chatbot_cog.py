@@ -130,7 +130,7 @@ class AIChatbotCog(commands.Cog):
       
     try:
       await auth(code)
-      await (await self.user_from_db(id)).set_token(user.auth_token)
+      await (await self.user_from_db(ctx.user.id)).set_token(user.auth_token)
     except Exception as e:
       await ctx.response.send_message(
         f"Couldn't authorise you! An error occurred, contact support!", ephemeral=True
