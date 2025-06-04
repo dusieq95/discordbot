@@ -5,7 +5,7 @@ import time
 
 import asyncio
 from discord.ext import commands
-from keep_alive import keepa_alive
+from keep_alive import keep_alive
 from tortoise import Tortoise
 from shapesinc import (
   shape,
