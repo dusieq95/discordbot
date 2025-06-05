@@ -362,3 +362,6 @@ class AIChatbotCog(commands.Cog):
 async def setup(bot: commands.Bot):
   """Function to load the cog"""
   await bot.add_cog(AIChatbotCog(bot))
+async def teardown(bot: commands.Bot):
+  """Function to load the cog"""
+  await bot.remove_cog("AIChatbotCog")
