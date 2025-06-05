@@ -1,9 +1,10 @@
-from discord.ext import commands
+import discord
 
+from discord.ext import commands
 from shapesinc import AsyncRoute as Rt
 from urllib.parse import urlencode as ufmt
 
-from .img import img_cmd, filter_cmd, tweet_cmd, comment_cmd, mask_cmd
+from .img import img_cmd, filter_cmd, tweet_cmd, comment_cmd, mask_cmd, overlay_cmd, anime_cmd
 
 
 
@@ -18,6 +19,11 @@ class SRA(commands.Cog):
     return await (BASE/p).request("GET",is_json=json)
     
   urlfmt=staticmethod(ufmt)
+  
+  async def send_image_embed(self, ctx, url):
+    e=discord.Embed(color=0x000)
+    e.set_image(url=url)
+    return await ctx.reply(embed=e)
     
     
   img=img_cmd
@@ -25,6 +31,8 @@ class SRA(commands.Cog):
   tweet=tweet_cmd
   comment=comment_cmd
   mask=mask_cmd
+  overlay=overlay_cmd
+  animu=anime_cmd
 
 async def setup(bot: commands.Bot):
   await bot.add_cog(SRA(bot))
