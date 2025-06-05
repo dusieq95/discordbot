@@ -50,7 +50,7 @@ class AIChatBot(commands.Bot):
         """Called when the bot is starting up"""
         try:
           # Load the AI chatbot cog
-            await self.load_extension("ai_chatbot_cog")
+            await self.load_extension("cogs")
             await self.load_extension("jishaku")
             logging.info("✅ AI Chatbot cog loaded successfully")
             await Tortoise.init(config=config.tortoise)
