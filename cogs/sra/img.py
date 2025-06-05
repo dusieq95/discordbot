@@ -1,7 +1,7 @@
 from discord.ext import commands
 
 class export:
-  @commands.command()
+  @commands.command(aliases=["image"])
   async def img(self, ctx, of: str = ""):
     opts=['fox', 'cat', 'bird', 'panda', 'red_panda', 'pikachu', 'racoon', 'koala', 'kangaroo', 'whale', 'dog', 'bird']
     of=of.lower()
@@ -15,4 +15,4 @@ class export:
     )
 
 
-exports = [export()]
+exports = {"img": export.img}
