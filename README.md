@@ -91,18 +91,7 @@
 
 - Ensure you have **Python 3** installed.
   
-- In the cloned repo’s root folder, run:
-  
- ```css
- pip install --upgrade pip
- pip3 install -r requirements.txt
- ```
-   
- - If you see the error:
-  
-  ```css
-   error: externally-managed-environment
-  ```
+- In the cloned repo’s root folder, first:
  
    create a virtual environment:
   
@@ -124,7 +113,7 @@ source ChatBot_env/bin/activate
 ChatBot_env\Scripts\Activate.ps1
 ```
 
-- After activation, rerun:
+- After activation,run:
    
 ```css
 pip install --upgrade pip
