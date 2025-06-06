@@ -22,10 +22,11 @@ class HelpCommand(commands.MinimalHelpCommand):
       await channel.send(embeds=embeds)
 
 class Misc(commands.Cog):
-  pass
+  def __init__(self, bot):
+    self.bot = bot
+    self.bot.help_command.cog = self
 
-def setup(bot):
-  bot.help_command.cog = Misc
+async def setup(bot):
   await bot.add_cog(Misc(bot))
 
 async def teardown(bot):
