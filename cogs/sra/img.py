@@ -1,6 +1,6 @@
 from discord.ext import commands
 import discord
-
+from constant_vars import *
 
 class export:
   @commands.command(aliases=["image"])
@@ -30,7 +30,7 @@ class export:
     e=discord.Embed(
       title=res["anime"],
       description=res["name"]+": "+res["quote"],
-      color=0x000
+      color=EMBED_COLOR
     )
     return await ctx.reply(embed=e)
     
