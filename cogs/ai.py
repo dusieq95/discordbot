@@ -107,14 +107,14 @@ class AIChatbotCog(commands.Cog):
     return self.bot.pool
     
   async def user_from_db(self, id: int) -> DBUser:
-    return (await DBUser.get_or_create(id=id, sid=str(id)[5:]))[0]
+    return (await DBUser.get_or_create(id=id)[0]
     
   async def user(self, id: int) -> ShapeUser:
     u=await self.user_from_db(id)
     kw={}
     if u.auth_token:
         kw["auth_token"]=u.auth_token
-    return ShapeUser(u.sid, **kw)
+    return ShapeUser(str(u.id), **kw)
 
   @app_commands.command(
     name="authorise",
