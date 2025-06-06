@@ -3,7 +3,7 @@ import discord
 import logging
 import time
 
-from constants import *
+from constant_vars import *
 import asyncio
 from discord.ext import commands
 from cogs.misc import HelpCommand
