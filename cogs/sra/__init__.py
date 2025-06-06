@@ -3,7 +3,7 @@ import discord
 from discord.ext import commands
 from shapesinc import AsyncRoute as Rt
 from urllib.parse import urlencode as ufmt
-
+from constant_vars import *
 from .img import img_cmd, filter_cmd, tweet_cmd, comment_cmd, mask_cmd, overlay_cmd, anime_cmd
 
 
@@ -21,7 +21,7 @@ class SRA(commands.Cog):
   urlfmt=staticmethod(ufmt)
   
   async def send_image_embed(self, ctx, url):
-    e=discord.Embed(color=0x000)
+    e=discord.Embed(color=EMBED_COLOR)
     e.set_image(url=url)
     return await ctx.reply(embed=e)
     
