@@ -107,7 +107,7 @@ class AIChatbotCog(commands.Cog):
     return self.bot.pool
     
   async def user_from_db(self, id: int) -> DBUser:
-    return (await DBUser.get_or_create(id=id)[0]
+    return (await DBUser.get_or_create(id=id))[0]
     
   async def user(self, id: int) -> ShapeUser:
     u=await self.user_from_db(id)
