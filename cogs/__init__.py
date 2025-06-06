@@ -1,7 +1,7 @@
 from discord.ext import commands
 
 
-exts = ["ai", "sra"]
+exts = ["ai", "sra", "misc"]
 
 async def setup(bot: commands.Bot):
   for ext in exts:
