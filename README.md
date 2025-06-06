@@ -1,5 +1,5 @@
 
-## 📚 ShapesInc AI Chatbot for Discord — User Manual
+## 📚 Generative AI Chatbot for Discord — User Manual
 
 ---
 
@@ -31,13 +31,13 @@
 *  Run:
 *  
    ```css
-   git clone https://github.com/Psyphen36/ShapesInc_For_Discord.git
-   cd ShapesInc_For_Discord
+   git clone https://github.com/Psyphen36/Generative_AI_for_Discord.git
+   cd Generative_AI_for_Discord
    ```
 
 ---
 
-#### 3.2. Obtain Your ShapesInc API Key & App ID
+#### 3.2. Obtain Your API Key & App ID
 
 * Visit the [ShapesInc Developer section](https://shapes.inc/developer). If you don’t have an account, sign up or log in.
    
@@ -50,7 +50,7 @@
 * Copy both the **API Key** and the **App ID**.
 
 
-![ShapesInc Dashboard showing API keys](https://github.com/user-attachments/assets/108d9a52-8ef4-42d1-9366-2c347ef856cf)
+![Dashboard showing API keys](https://github.com/user-attachments/assets/108d9a52-8ef4-42d1-9366-2c347ef856cf)
 
 ---
 
@@ -58,7 +58,7 @@
 
 * Go to the [Discord Developer Portal](https://discord.com/developers/applications).
 
-* Click **New Application**, enter a name (e.g., “My ShapesInc Bot”), and click **Create**.
+* Click **New Application**, enter a name (e.g., “My Bot”), and click **Create**.
 
 * In the left sidebar, select **Bot** → **Add Bot** → **Yes, do it!**
 
@@ -141,10 +141,10 @@ pip3 install -r requirements.txt
 - Open `.env` in your text editor and Replace each placeholder in quotes with your actual values.
 
 ```ini
-SHAPES_API_KEY="your_shapesinc_api_key_here"
-SHAPES_APP_ID="your_shapesinc_app_id_here"
+SHAPES_API_KEY="your_api_key_here"
+SHAPES_APP_ID="your_app_id_here"
 DISCORD_TOKEN="your_discord_bot_token_here"
-MODEL="your_shapesinc_model_name_here"
+MODEL="your_model_name_here"
 ```
    
 3. **Start the Bot**
@@ -175,12 +175,12 @@ python3 main.py
 
 * Go to [Render.com](https://render.com/) and **Sign Up** (use GitHub for faster setup).
 
-* Click **New** → **Web Service** → **Connect to GitHub** → Select your `ShapesInc_For_Discord` repo.  
+* Click **New** → **Web Service** → **Connect to GitHub** → Select your `Generative_AI_for_Discord` repo.  
 ![Connect GitHub to Render](https://github.com/user-attachments/assets/177f1bfe-280c-418f-9ee8-d46e288fe280)
 
 *  In the **Create Web Service** dialog:
 
-- **Name** your service (e.g., `shapesinc-discord-bot`).
+- **Name** your service (e.g., `discord-bot`).
    
 - For **Environment**, select **Python3** (the default is fine).
 
@@ -228,7 +228,7 @@ python3 main.py
 ![Authorize Link](https://github.com/user-attachments/assets/3c7ee059-1c26-4a99-89d2-a91cf3bfad63)
 
 * Click the link and copy the **authorization code** displayed.  
-![Shapes Authorized Code](https://github.com/user-attachments/assets/47e92ea5-a31c-42b4-b4a2-85bb995748b7)
+![Authorized Code](https://github.com/user-attachments/assets/47e92ea5-a31c-42b4-b4a2-85bb995748b7)
 
 4. Return to Discord and run:
 
@@ -281,4 +281,4 @@ Big thanks to **@Rishiraj0100** for the [ShapesInc Library](https://github.com/R
 
 ### 7. Congrats—You’re Done!
 
-If you’ve followed all the steps above, your self-hosted ShapesInc AI Chatbot for Discord should be live and ready to go. Enjoy chatting and let the bot amaze you with its image understanding and code-writing capabilities!
+If you’ve followed all the steps above, your self-hosted AI Chatbot for Discord should be live and ready to go. Enjoy chatting and let the bot amaze you with its image understanding and code-writing capabilities!
