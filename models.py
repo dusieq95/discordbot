@@ -11,7 +11,6 @@ class DBChannel(Model):
 
 class DBUser(Model):
   id = fields.BigIntField(pk=True)
-  sid = fields.CharField(unique=True, max_length=50)
   auth_token = fields.TextField(null=True)
   
   def set_token(self, token: str):
