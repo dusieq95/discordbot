@@ -3,8 +3,10 @@ import discord
 import logging
 import time
 
+from constants import *
 import asyncio
 from discord.ext import commands
+from cogs.misc import HelpCommand
 from keep_alive import keep_alive
 from tortoise import Tortoise
 from shapesinc import (
@@ -43,7 +45,7 @@ class AIChatBot(commands.Bot):
         super().__init__(
           command_prefix='$',  # You can change this prefix as needed
           intents=intents,
-          # help_command=None  # Disable default help command if you want
+          help_command=HelpCommand(color=EMBED_COLOR)
         )
 
     async def setup_hook(self):
