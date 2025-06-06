@@ -16,9 +16,10 @@ class export:
     )
   @commands.command(aliases=["anime"])
   async def animu(self, ctx, content: str = ""):
-    opts=['nom', 'poke', 'cry', 'kiss', 'pat', 'hug', 'wink', 'facepalm', 'quote']
+    opts=['nom', 'poke', 'cry', 'kiss', 'pat', 'hug', 'wink', 'facepalm', 'quote', 'face-palm']
     of=content.lower().replace("facepalm", "face-palm")
     if (not of) or of not in opts:
+      opts.remove('face-palm')
       return await ctx.reply(
         "Available types:\n```\n"+"\n".join(opts)+"\n```"
       )
