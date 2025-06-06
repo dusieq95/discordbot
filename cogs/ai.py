@@ -94,7 +94,7 @@ def format_for_discord(text: str) -> str:
   return '\n'.join(formatted_lines)
 
 # ─── AI CHATBOT COG ────────────────────────────────────────────────────────────
-class AIChatbotCog(commands.Cog):
+class AIChatbot(commands.Cog):
   def __init__(self, bot: commands.Bot):
     self.bot = bot
     self.shape = bot.shape
@@ -361,7 +361,7 @@ class AIChatbotCog(commands.Cog):
 # ─── COG SETUP FUNCTION ────────────────────────────────────────────────────────
 async def setup(bot: commands.Bot):
   """Function to load the cog"""
-  await bot.add_cog(AIChatbotCog(bot))
+  await bot.add_cog(AIChatbot(bot))
 async def teardown(bot: commands.Bot):
   """Function to load the cog"""
-  await bot.remove_cog("AIChatbotCog")
+  await bot.remove_cog("AIChatbot")
