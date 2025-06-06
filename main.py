@@ -34,8 +34,8 @@ print("discord token:", DISCORD_TOKEN)
 # Initialize Shapes API client for testing
 shapes = shape(SHAPES_API_KEY, MODEL, SHAPES_APP_ID, synchronous=False)
 
-user = User("0")
-# channel = Channel("0")
+user = User("testuser0")
+channel = Channel("testchannel0")
 # ─── BOT SETUP ─────────────────────────────────────────────────────────────────
 class AIChatBot(commands.Bot):
     shape: AsyncShape
@@ -98,9 +98,9 @@ def main():
   try:
     async def test():
       await shapes.prompt(
-        "test"
-        # user=user
-        # channel=channel
+        "test",
+        user=user,
+        channel=channel
       )
       logging.info("✅ Shapes API connection successful")
     asyncio.run(test())
