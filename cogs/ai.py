@@ -184,6 +184,33 @@ class AIChatbot(commands.Cog):
 
     await ctx.reply("⚠️ I'm already activated in this channel.")
 
+  @commands.command(hidden=True)
+  async def p2(self, ctx):
+    ref = ctx.message.reference
+    if not ref:
+      return await ctx.reply("Reply the msg plz.")
+
+    m = None
+    id = ref.message_id
+    try:
+      m = await ctx.channel.fetch_message(id)
+    except:
+      return await ctx.reply("Couldn't find msg!")
+
+    if m.embeds:
+      i = m.embeds[0].image
+      if i and i.url:
+        resp = await self.bot.prompt(
+          Message.new(
+            "Which pokemon is this?",
+            [dict(type=ContentType.image, url=i.url)]
+          )
+        )
+        return await ctx.reply(resp.choices[0].message)
+
+    return await ctx.reply("Couldn't find pokemon...")
+
+  
   @commands.Cog.listener()
   async def on_ready(self):
     logging.info(f"🤖 AI Chatbot Cog loaded!")
