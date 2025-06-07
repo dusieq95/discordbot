@@ -1,6 +1,7 @@
 from discord.ext import commands
 import discord
 from constant_vars import *
+from typing import Optional
 
 class export:
   @commands.command(aliases=["image"])
@@ -129,12 +130,18 @@ class export:
     )))
     
   @commands.command()
-  async def comment(self, ctx, *comment: str):
-    comment=" ".join(comment)
+  async def comment(
+    self,
+    ctx,
+    user: Optional[discord.User],
+    *,
+    comment: str
+  ):
+    user = user or ctx.author
     return await self.send_image_embed(ctx, "https://api.some-random-api.com/canvas/misc/youtube-comment?"+self.urlfmt(dict(
-      username=ctx.author.name,
+      username=user.name,
       comment=comment,
-      avatar=ctx.author.avatar.url,
+      avatar=user.avatar.url,
       theme="dark"
     )))
     
