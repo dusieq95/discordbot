@@ -194,13 +194,14 @@ class AIChatbot(commands.Cog):
     id = ref.message_id
     try:
       m = await ctx.channel.fetch_message(id)
-    except:
+    except:...
+    if not m:
       return await ctx.reply("Couldn't find msg!")
 
     if m.embeds:
       i = m.embeds[0].image
       if i and i.url:
-        resp = await self.bot.prompt(
+        resp = await self.bot.shape.prompt(
           Message.new(
             "Which pokemon is this?",
             [dict(type=ContentType.image, url=i.url)]
