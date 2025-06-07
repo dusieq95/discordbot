@@ -264,7 +264,7 @@ Now you can start your conversation with the bot
 
 ### 6. Special Thanks
 
-Big thanks to **@Rishiraj0100** for the [ShapesInc Library](https://github.com/Rishiraj0100/shapesinc-py), which made building this chatbot so much smoother. Your work and contributions are greatly appreciated!
+Big thanks to **@Rishiraj0100** for the [ShapesInc Library](https://github.com/Rishiraj0100/shapesinc-py), which made building this chatbot so much smoother. And **@cloner** for contributing in this project. Your work and contributions are greatly appreciated!
 
 ---
 
