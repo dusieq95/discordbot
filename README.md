@@ -10,6 +10,7 @@
 - **On-Demand Code Generation:** Request code snippets tailored to your prompts.
 - **User Recognition:** Maintains separate contexts for each Discord user, so it never confuses one user for another.
 - **Secure Authorization:** Requires each user to verify via `/authorize` before chatting ensuring the bot knows who it’s talking to.
+- **Others:** use $help to see more secret features!
 
 ---
 
