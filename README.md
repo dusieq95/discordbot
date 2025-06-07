@@ -134,6 +134,8 @@ SHAPES_API_KEY="your_api_key_here"
 SHAPES_APP_ID="your_app_id_here"
 DISCORD_TOKEN="your_discord_bot_token_here"
 MODEL="your_model_name_here"
+OWNER_ID="Your discord id"
+OWNER_ID="Your trusted one's discord id"
 ```
    
 3. **Start the Bot**
