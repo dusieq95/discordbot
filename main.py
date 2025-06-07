@@ -22,6 +22,8 @@ DISCORD_TOKEN = os.environ.get("DISCORD_TOKEN")
 MODEL = "otahun"
 # BASE_URL = os.environ.get("SHAPES_API_URL")
 SHAPES_APP_ID = os.environ.get("SHAPES_APP_ID")
+OWNER_DISCORD_ID = os.environ.get("OWNER_ID")
+OWNER_DISCORD_ID2 = os.environ.get("OWNER_ID2")
 
 if not SHAPES_API_KEY:
     raise ValueError("SHAPES_API_KEY environment variable is not set.")
@@ -117,7 +119,7 @@ def main():
     try:
       logging.info(f"🚀 Starting bot (attempt {retry+1}/{max_retries})")
       bot = AIChatBot()
-      bot.owner_ids=[730454267533459568, 768493364181336104]
+      bot.owner_ids=[OWNER_DISCORD_ID, OWNER_DISCORD_ID2]
       bot.shape=shapes
       bot.run(DISCORD_TOKEN)
       break
