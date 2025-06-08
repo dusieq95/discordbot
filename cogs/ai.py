@@ -218,8 +218,8 @@ class AIChatbot(commands.Cog):
     # Set bot presence
     await self.bot.change_presence(
       activity=discord.Activity(
-        type=discord.ActivityType.custom, 
-        name='''test2'''
+        type=discord.ActivityType.playing, 
+        name='''Grand Theft Auto VI'''
       )
     )
 
